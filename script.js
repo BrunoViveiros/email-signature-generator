@@ -17,14 +17,22 @@ const socialNetworks = [
 
 const buttons = document.querySelectorAll(".tab");
 const containers = document.querySelectorAll(".container");
+const iconTypes = document.querySelectorAll(".icon-type");
 
 (init => {
   buttons.forEach(button => {
     button.addEventListener("click", handleTabs);
   });
+
+  iconTypes.forEach(type => {
+    type.addEventListener("click", populateSocialNetworks);
+  })
+
+  populateSocialNetworks();
 })();
 
-function populateSocialNetworks(type) {
+function populateSocialNetworks() {
+  const type = checkIconType();
   const container = document.querySelector(".icons-container .icons");
   container.innerHTML = "";
 
@@ -37,6 +45,11 @@ function populateSocialNetworks(type) {
     }
     container.appendChild(icon);
   });
+}
+
+function checkIconType() {
+  const iconType = document.querySelector('input[name="icon-type"]:checked').value;
+  return iconType
 }
 
 function teste() {
