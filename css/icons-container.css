@@ -1,0 +1,38 @@
+.icons-container {
+  position: relative;
+  border: 2px solid var(--primary-color);
+  padding: 16px;
+}
+
+.icons-container p {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 0 16px;
+
+  color: #777;
+  background-color: #fff;
+
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+
+  transform: translate(-50%, -50%);
+}
+
+.icons-container .icons {
+  display: grid;
+  grid-template-columns:repeat(6, 64px);
+  gap: 16px;
+  justify-items: center;
+  justify-content: center;
+
+  margin: auto;
+}
+
+.icons-container .icons img {
+  width: 64px;
+  height: 64px;
+
+  cursor: pointer;
+}
