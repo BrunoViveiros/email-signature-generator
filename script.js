@@ -43,7 +43,7 @@ function populateSocialNetworks() {
       icon.src = `./assets/icons/social-circle/${item}.svg`;
     }
     icon.dataset.name = item;
-    icon.addEventListener("click", addSocialNetwork);
+    icon.addEventListener("click", createSocialNetwork);
 
     container.appendChild(icon);
   });
@@ -82,7 +82,8 @@ function removeActive(element) {
   element.forEach(item => item.classList.remove("-active"));
 }
 
-function createSocialNetwork(name) {
+function createSocialNetwork(e) {
+  const name = e.target.dataset.name;
   let form = document.querySelector(`section[data-name='social'] form`);
   let container = document.createElement("div");
   let input = document.createElement("input");
@@ -111,11 +112,6 @@ function createSocialNetwork(name) {
   container.appendChild(image);
 
   form.appendChild(container);
-}
-
-function addSocialNetwork(e) {
-  name = e.target.dataset.name;
-  createSocialNetwork(name);
 }
 
 function checkIconType() {
