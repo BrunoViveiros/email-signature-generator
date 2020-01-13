@@ -25,7 +25,7 @@ const containers = document.querySelectorAll(".container");
 })();
 
 function populateSocialNetworks(type) {
-  const container = document.querySelector(".icons-container > .icons");
+  const container = document.querySelector(".icons-container .icons");
   container.innerHTML = "";
 
   socialNetworks.forEach(item => {

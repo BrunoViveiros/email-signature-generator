@@ -39,6 +39,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/icon-types.css" />
     <link rel="stylesheet" href="css/icons-container.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
@@ -57,6 +58,7 @@
       </nav>
 
       <section data-name="info" class="container">
+        <h3>Digite suas informações</h3>
         <form>
           <div class="inputs">
             <input type="text" name="name" placeholder="Nome" id="name" />
@@ -108,12 +110,13 @@
       </section>
 
       <section data-name="social" class="container -active">
+        <h3>Selecione o tipo de icone</h3>
         <ul class="icon-types">
-          <li class="icon-type">
-            <input type="radio" name="icon-type" id="round">
+          <li class="icon-type round">
+            <input type="radio" name="icon-type" id="round" checked="checked" >
             <label for="round">Round</label>
           </li>
-          <li class="icon-type">
+          <li class="icon-type circle">
             <input type="radio" name="icon-type" id="circle">
             <label for="circle">Circle</label>
           </li>
