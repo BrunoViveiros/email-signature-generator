@@ -32,7 +32,7 @@ const iconTypes = document.querySelectorAll(".icon-type");
 })();
 
 function populateSocialNetworks() {
-  const type = checkIconType();
+  const type = document.querySelector('input[name="icon-type"]:checked').value;
   const container = document.querySelector(".icons-container .icons");
   container.innerHTML = "";
 
@@ -45,11 +45,6 @@ function populateSocialNetworks() {
     }
     container.appendChild(icon);
   });
-}
-
-function checkIconType() {
-  const iconType = document.querySelector('input[name="icon-type"]:checked').value;
-  return iconType
 }
 
 function teste() {
