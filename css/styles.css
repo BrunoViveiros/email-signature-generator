@@ -170,7 +170,7 @@ main {
   font-weight: 700;
 }
 
-.inputs i {
+.inputs img {
   position: absolute;
   left: 0;
   top: 50%;
@@ -179,11 +179,6 @@ main {
 
   width: 32px;
   height: 32px;
-}
-
-.inputs i img {
-  width: 100%;
-  height: 100%;
 }
 
 .button {

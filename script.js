@@ -1,4 +1,4 @@
-const socialNetworks = [
+let socialNetworks = [
   "Behance",
   "Blogger",
   "Codepen",
