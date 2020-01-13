@@ -2,6 +2,7 @@
   position: relative;
   border: 2px solid var(--primary-color);
   padding: 16px;
+  margin: 16px auto;
 }
 
 .icons-container p {
