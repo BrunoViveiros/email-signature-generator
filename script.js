@@ -31,21 +31,28 @@ const iconTypes = document.querySelectorAll(".icon-type");
 })();
 
 function populateSocialNetworks() {
-  const type = checkIconType();
   const container = document.querySelector(".icons-container .icons");
   container.innerHTML = "";
 
+  createIcon(container);
+}
+
+function createIcon(container) {
+  const type = checkIconType();
+  const inputs = document.querySelectorAll(".inputs img");
+
   socialNetworks.forEach(item => {
     let icon = document.createElement("img");
-    if (type == "round") {
-      icon.src = `./assets/icons/social-rounded/${item}.svg`;
-    } else if (type == "circle") {
-      icon.src = `./assets/icons/social-circle/${item}.svg`;
-    }
+    icon.src = changeIconType(type, item);
     icon.dataset.name = item;
     icon.addEventListener("click", createSocialNetwork);
 
     container.appendChild(icon);
+  });
+
+  inputs.forEach(icon => {
+    itemName = icon.dataset.name;
+    icon.src = changeIconType(type, itemName);
   });
 }
 
@@ -83,7 +90,7 @@ function removeActive(element) {
 }
 
 function removeItem(icon) {
-  icon.remove()
+  icon.remove();
 }
 
 function createSocialNetwork(e) {
@@ -110,6 +117,7 @@ function createSocialNetwork(e) {
     image.src = `./assets/icons/social-circle/${name}.svg`;
   }
   image.alt = `Icone do ${name}`;
+  image.dataset.name = name;
 
   container.appendChild(input);
   container.appendChild(label);
@@ -121,4 +129,12 @@ function createSocialNetwork(e) {
 
 function checkIconType() {
   return document.querySelector('input[name="icon-type"]:checked').value;
+}
+
+function changeIconType(type, item) {
+  if (type == "round") {
+    return `./assets/icons/social-rounded/${item}.svg`;
+  } else if (type == "circle") {
+    return `./assets/icons/social-circle/${item}.svg`;
+  }
 }
