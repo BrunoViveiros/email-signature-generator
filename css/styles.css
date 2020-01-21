@@ -131,6 +131,7 @@ main {
 }
 .inputs input::placeholder {
   color: transparent;
+  visibility: hidden;
 }
 .inputs input:placeholder-shown ~ label {
   font-size: 1.3rem;

@@ -82,6 +82,10 @@ function removeActive(element) {
   element.forEach(item => item.classList.remove("-active"));
 }
 
+function removeItem(icon) {
+  icon.remove()
+}
+
 function createSocialNetwork(e) {
   const name = e.target.dataset.name;
   let form = document.querySelector(`section[data-name='social'] form`);
@@ -112,6 +116,7 @@ function createSocialNetwork(e) {
   container.appendChild(image);
 
   form.appendChild(container);
+  removeItem(e.target);
 }
 
 function checkIconType() {
