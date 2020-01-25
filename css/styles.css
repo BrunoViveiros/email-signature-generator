@@ -183,6 +183,27 @@ main {
   height: 32px;
 }
 
+.inputs span {
+  position: absolute;
+  right: 0;
+  top: 50%;
+
+  transform: translateX(100%);
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
 .button {
   font-size: 18px;
   font-weight: bold;

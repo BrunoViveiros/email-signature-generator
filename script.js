@@ -17,7 +17,18 @@ let socialNetworks = [
 const buttons = document.querySelectorAll(".tab");
 const containers = document.querySelectorAll(".container");
 const iconTypes = document.querySelectorAll(".icon-type");
+function teste() {
+  let valores = {};
+  let meuForm = document.querySelectorAll("form input");
 
+  meuForm.forEach(item => {
+    if (item.value) {
+      valores[item.name] = item.value;
+    }
+  });
+
+  console.log(valores);
+}
 (init => {
   buttons.forEach(button => {
     button.addEventListener("click", handleTabs);
@@ -56,19 +67,6 @@ function createIcon(container) {
   });
 }
 
-function teste() {
-  let valores = {};
-  let meuForm = document.querySelectorAll("form input");
-
-  meuForm.forEach(item => {
-    if (item.value) {
-      valores[item.name] = item.value;
-    }
-  });
-
-  console.log(valores);
-}
-
 function handleTabs(e) {
   const button = e.target;
   const buttonName = e.target.innerHTML;
@@ -89,8 +87,8 @@ function removeActive(element) {
   element.forEach(item => item.classList.remove("-active"));
 }
 
-function removeItem(icon) {
-  icon.remove();
+function removeItem(item) {
+  item.remove();
 }
 
 function createSocialNetwork(e) {
@@ -98,6 +96,7 @@ function createSocialNetwork(e) {
   let form = document.querySelector(`section[data-name='social'] form`);
   let container = document.createElement("div");
   let input = document.createElement("input");
+  let span = document.createElement("span");
   let label = document.createElement("label");
   let image = document.createElement("img");
 
@@ -119,12 +118,21 @@ function createSocialNetwork(e) {
   image.alt = `Icone do ${name}`;
   image.dataset.name = name;
 
+  span.innerText = "x";
+
   container.appendChild(input);
   container.appendChild(label);
   container.appendChild(image);
+  container.appendChild(span);
 
   form.appendChild(container);
-  removeItem(e.target);
+  addRemoveEvent(span, container);
+  socialNetworks = socialNetworks.filter(item => {
+    if (item != name) {
+      return true;
+    }
+  });
+  populateSocialNetworks();
 }
 
 function checkIconType() {
@@ -137,4 +145,13 @@ function changeIconType(type, item) {
   } else if (type == "circle") {
     return `./assets/icons/social-circle/${item}.svg`;
   }
+}
+
+function addRemoveEvent(element, container) {
+  element.addEventListener("click", () => {
+    const name = container.querySelector("img").dataset.name;
+    socialNetworks.push(name)
+    populateSocialNetworks()
+    removeItem(container);
+  });
 }
