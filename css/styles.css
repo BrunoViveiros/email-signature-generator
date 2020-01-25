@@ -191,6 +191,7 @@ main {
   transform: translateX(100%);
   color: red;
   font-weight: bold;
+  
   cursor: pointer;
 }
 

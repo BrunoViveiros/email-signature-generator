@@ -17,18 +17,7 @@ let socialNetworks = [
 const buttons = document.querySelectorAll(".tab");
 const containers = document.querySelectorAll(".container");
 const iconTypes = document.querySelectorAll(".icon-type");
-function teste() {
-  let valores = {};
-  let meuForm = document.querySelectorAll("form input");
 
-  meuForm.forEach(item => {
-    if (item.value) {
-      valores[item.name] = item.value;
-    }
-  });
-
-  console.log(valores);
-}
 (init => {
   buttons.forEach(button => {
     button.addEventListener("click", handleTabs);
@@ -146,8 +135,31 @@ function changeIconType(type, item) {
 function addRemoveEvent(element, container) {
   element.addEventListener("click", () => {
     const name = container.querySelector("img").dataset.name;
-    socialNetworks.push(name)
-    populateSocialNetworks()
-    container.remove()
+    socialNetworks.push(name);
+    populateSocialNetworks();
+    container.remove();
   });
+}
+
+function getForms() {
+  const infoForm = document.querySelectorAll("#info input");
+  const socialForm = document.querySelectorAll("#social input");
+  const type = checkIconType();
+  let data = {
+    social: { type }
+  };
+
+  infoForm.forEach(item => {
+    if (item.value) {
+      data[item.name] = item.value;
+    }
+  });
+
+  socialForm.forEach(item => {
+    if (item.value) {
+      data.social[item.name] = item.value;
+    }
+  });
+
+  console.log(data);
 }
