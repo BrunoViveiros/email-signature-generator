@@ -87,10 +87,6 @@ function removeActive(element) {
   element.forEach(item => item.classList.remove("-active"));
 }
 
-function removeItem(item) {
-  item.remove();
-}
-
 function createSocialNetwork(e) {
   const name = e.target.dataset.name;
   let form = document.querySelector(`section[data-name='social'] form`);
@@ -152,6 +148,6 @@ function addRemoveEvent(element, container) {
     const name = container.querySelector("img").dataset.name;
     socialNetworks.push(name)
     populateSocialNetworks()
-    removeItem(container);
+    container.remove()
   });
 }
