@@ -1,0 +1,44 @@
+.signature-modal {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.signature-modal .close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #4158d0;
+  color: #fff;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+  transform: translate(-50%, 50%);
+  cursor: pointer;
+}
+
+.signature-container {
+  position: absolute;
+  height: 400px;
+  width: 600px;
+  
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+
+  background-color: #eee;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+
+  z-index: 99;
+}

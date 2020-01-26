@@ -163,3 +163,30 @@ function getForms() {
 
   console.log(data);
 }
+
+function createSignatureModal() {
+  const modal = document.createElement("div");
+  const container = document.createElement("div");
+  const closeIcon = document.createElement("span");
+
+  modal.classList.add("signature-modal");
+
+  container.classList.add("signature-container");
+
+  closeIcon.classList.add("close");
+  closeIcon.innerText = "x";
+
+  modal.addEventListener("click", () => {
+    modal.remove();
+    container.remove();
+  });
+
+  modal.appendChild(closeIcon);
+
+  document.body.appendChild(modal);
+  document.body.appendChild(container);
+}
+
+function createSignature() {
+  const data = getForms();
+}
